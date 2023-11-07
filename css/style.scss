@@ -1,0 +1,25 @@
+.logo {
+    width: 150px;
+    height: 150px;
+    background-repeat: no-repeat;
+}
+
+.layers {
+    perspective: 1000px;
+
+    &__container {
+        height: 100vh;
+        transform-style: preserve-3d;
+    }
+
+    &__item {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-size: cover;
+        background-position: center;
+        transform: rotateX(30deg) rotateY(30px);
+    }
+}

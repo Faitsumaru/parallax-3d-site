@@ -1,8 +1,8 @@
-let canvas = document.getElementsByClassName('sand')[0];
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+let canvas2 = document.getElementsByClassName('sand')[0];
+canvas2.width = window.innerWidth;
+canvas2.height = window.innerHeight;
 
-let c = canvas.getContext('2d');
+let d = canvas2.getContext('2d');
 
 function randomNum(max, min) {
     return Math.floor(Math.random() * max) + min;
@@ -17,12 +17,12 @@ function Sandstorm(x, y, endy, velocity, opacity) {
     this.opacity = opacity;
 
     this.draw = function() {
-        c.beginPath();
-        c.moveTo(this.x - this.y, this.y - this.x);
-        c.lineTo(this.x - this.endy, this.y + this.endy);
-        c.lineWidth = 1;
-        c.strokeStyle= "rgba(255, 187, 0, " + this.opacity + ")";
-        c.stroke();
+        d.beginPath();
+        d.moveTo(this.x - this.y, this.y - this.x);
+        d.lineTo(this.x - this.endy, this.y + this.endy);
+        d.lineWidth = 1;
+        d.strokeStyle= "rgba(255, 187, 0, " + this.opacity + ")";
+        d.stroke();
     }
 
     this.update = function() {
@@ -51,7 +51,7 @@ for (let i = 0; i < 140; i++) {
 function animateStorm() {
 
     requestAnimationFrame(animateStorm);
-    c.clearRect(0,0, window.innerWidth, window.innerHeight);
+    d.clearRect(0,0, window.innerWidth, window.innerHeight);
 
     for (let i = 0; i < stormArray.length; i++) {
         stormArray[i].update();
